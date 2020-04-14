@@ -1,6 +1,6 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
-from .models import CustomUser, Brewery
+from .models import CustomUser, Brewery, Beer
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
@@ -35,7 +35,13 @@ class CustomUserSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
+
+class BeerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Beer
+        fields = ('id','name', 'style', 'rating', 'abv', 'description', 'release_date', 'image_url')
 class BrewerySerializer(serializers.ModelSerializer):
+    beers = BeerSerializer(many=True, read_only=True)
     class Meta:
         model = Brewery
-        fields = ('id', 'name', 'location', 'latitude', 'longitude', 'website_url', 'logo_url', 'image_url')
+        fields = ('id', 'name', 'location', 'latitude', 'longitude', 'website_url', 'logo_url', 'image_url', 'beers')
