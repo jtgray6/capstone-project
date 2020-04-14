@@ -1,10 +1,11 @@
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
-from .views import ObtainTokenPairWithColorView, CustomUserCreate, HelloWorldView, BreweryView
+from .views import ObtainTokenPairWithColorView, CustomUserCreate, HelloWorldView, BreweryView, BeerView
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('breweries', BreweryView)
+router.register('beers', BeerView)
 
 urlpatterns = [
     path('user/create/', CustomUserCreate.as_view(), name="create_user"),

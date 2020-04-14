@@ -17,3 +17,16 @@ class Brewery(models.Model):
 
     def __str__(self):
         return self.name
+
+class Beer(models.Model):
+    name = models.CharField(max_length=255)
+    style = models.CharField(max_length=255)
+    rating = models.FloatField()
+    abv = models.FloatField()
+    description = models.TextField()
+    release_date = models.DateField()
+    image_url = models.TextField()
+    brewery = models.ForeignKey(Brewery, related_name="beers", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

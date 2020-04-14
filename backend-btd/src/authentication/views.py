@@ -2,8 +2,8 @@ from rest_framework import status, permissions, viewsets
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Brewery
-from .serializers import BrewerySerializer
+from .models import Brewery, Beer
+from .serializers import BrewerySerializer, BeerSerializer
 
 from .serializers import MyTokenObtainPairSerializer, CustomUserSerializer
 
@@ -32,3 +32,6 @@ class HelloWorldView(APIView):
 class BreweryView(viewsets.ModelViewSet):
     queryset = Brewery.objects.all()
     serializer_class = BrewerySerializer
+class BeerView(viewsets.ModelViewSet):
+    queryset = Beer.objects.all()
+    serializer_class = BeerSerializer
