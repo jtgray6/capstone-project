@@ -35,11 +35,15 @@ class CustomUserSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
-
+class BreweryNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Brewery
+        fields = ('id', 'name')
 class BeerSerializer(serializers.ModelSerializer):
+    brewery = BreweryNameSerializer(many=False, read_only=True)
     class Meta:
         model = Beer
-        fields = ('id','name', 'style', 'rating', 'abv', 'description', 'release_date', 'image_url')
+        fields = ('id', 'brewery', 'name', 'style', 'rating', 'abv', 'description', 'release_date', 'image_url')
 class BrewerySerializer(serializers.ModelSerializer):
     beers = BeerSerializer(many=True, read_only=True)
     class Meta:
