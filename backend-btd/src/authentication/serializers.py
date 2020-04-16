@@ -38,7 +38,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
 class BreweryNameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brewery
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'logo_url')
 class BeerSerializer(serializers.ModelSerializer):
     brewery = BreweryNameSerializer(many=False, read_only=True)
     class Meta:
