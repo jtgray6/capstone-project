@@ -13,7 +13,7 @@ Requirements:
 * Pip3
 * Django
 
-Clone and fork this repository. Navigate to the backend-btd/src folder and run 'python3 manage.py runserver' to start the backend.
+Clone and fork this repository. Run npm install. Navigate to the backend-btd/src folder and run 'python3 manage.py runserver' to start the backend.
 
 ### Contributor's Guide
 Feel free to contribute to this project by forking and cloning the repo.
