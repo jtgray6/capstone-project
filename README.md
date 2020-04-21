@@ -5,7 +5,7 @@ Have you ever visited a city and had too much to choose from? If you like craft 
 https://github.com/jtgray6/capstone-project-frontend
 
 ## Overview
-This repo contains the backend for Brew Tour Denver, an app designed to show off some hidden gem breweries and beers of the Greater Denver craft beer scene.
+This repo contains the backend for Brew Tour Denver, an app designed to show off some hidden gem breweries and beers of the Greater Denver craft beer scene. (more info in frontend repo, including user stories, use link above to see)
 
 ## Installation Instructions
 Requirements:
